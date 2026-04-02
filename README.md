@@ -52,3 +52,14 @@ The system also supports recurring tasks. When a task marked as “daily” or �
 Additionally, the scheduler detects conflicts when multiple tasks are scheduled at the same time. Instead of crashing, it returns clear warning messages so users can adjust their plans.
 
 These features improve both the usability and flexibility of the scheduling system while keeping the logic simple and beginner-friendly.
+
+Testing PawPal+
+
+To run the automated test suite, use:
+python -m pytest 
+This test suite covers key features of the PawPal+ system, including sorting tasks by time, filtering by pet and completion status, recurring task behavior, and conflict detection. Both normal scenarios and edge cases (such as empty task lists or duplicate times) are tested to ensure the system works reliably.
+
+
+Confidence Level
+is 4 out of 5 stars.
+The system performs well for core scheduling features, though some simplified logic (like exact time conflict checks instead of duration overlaps) leaves room for future improvements.
