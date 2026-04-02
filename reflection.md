@@ -6,8 +6,13 @@
 
 - Briefly describe your initial UML design.
 - What classes did you include, and what responsibilities did you assign to each?
+I used the classes Pet, CareTask, PetOwner, DailyPlan, and Scheduler. The Pet class stores basic information like name, species, and age. The CareTask class represents tasks such as feeding or walking, including details like duration, priority, category, and whether it is required. The PetOwner class manages the owner’s information, preferences, and list of pets. The DailyPlan class holds the tasks and reasons for a specific day. The Scheduler class is responsible for organizing and sorting tasks, for example by priority.
+
+Each class has a clear role: Pet and CareTask store data, while PetOwner, DailyPlan, and Scheduler handle organization and management.
+
 
 **b. Design changes**
+Overall, the skeleton matches the intended roles well, and I do not see a missing core relationship in the current model. The main risks are consistency and future validation rather than class wiring.
 
 - Did your design change during implementation?
 - If yes, describe at least one change and why you made it.
@@ -22,6 +27,7 @@
 - How did you decide which constraints mattered most?
 
 **b. Tradeoffs**
+One tradeoff in my scheduler is that conflict detection only checks whether tasks have the exact same scheduled time. This keeps the algorithm simple and readable, but it does not detect overlaps based on duration. For example, a task at 10:00 for 30 minutes and another at 10:15 would not be treated as a conflict. I kept this simpler version because it is easier to understand and maintain for this project.
 
 - Describe one tradeoff your scheduler makes.
 - Why is that tradeoff reasonable for this scenario?
